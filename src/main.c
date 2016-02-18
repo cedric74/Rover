@@ -70,7 +70,7 @@ void Init(){
 	printf("%s \n" , START_FILE);
 
 //	// Start WatchDog
-//	watch_dog_start();
+	watch_dog_start();
 //
 //	// Load Config File
 //	int iRet =Lib_Config_Load();

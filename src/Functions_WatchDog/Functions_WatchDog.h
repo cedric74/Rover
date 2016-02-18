@@ -1,42 +1,46 @@
 /*
- ============================================================================
- Name        : Lib_main.h
- Author      : Cedric T.
- Version     : 1.0
- Date		 : 03/02/2015
- Description :
- ============================================================================
+ * Functions_WatchDog.h
+ *
+ *  Created on: Mar 3, 2015
+ *      Author: cedric
  */
-#ifndef _LIB_H
-#define _LIB_H
+
+#ifndef FUNCTIONS_WATCHDOG_H_
+#define FUNCTIONS_WATCHDOG_H_
 
 /*******************************************
 *			  I N C L U D E 			   *
 ********************************************/
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/ioctl.h>
 
-#include "Functions_WatchDog/Functions_WatchDog.h"
+#include <linux/watchdog.h>
+#include  <pthread.h>
 
 /*******************************************
 *               D E F I N E                *
 ********************************************/
-#define START_FILE			"V1.0 , DEBUG, 17 FEV,  "
-#define SIZE_STRING			23
+#define WATCHDOGDEV "/dev/watchdog"
 
 /*******************************************
 *   T Y P E D E F   &  C O N S T A N T E   *
 ********************************************/
+
 /*******************************************
 *	 G L O B A L   V A R I A B L E S  	   *
 ********************************************/
+int 		fWatchdog;
 
 /*******************************************
 *	        F U N C T I O N S   	       *
 ********************************************/
-void 			Init(void);
+void Thread_Watch_Reset(void);
+void watch_dog_clear(void);
+void watch_dog_start(void);
+void watch_dog_stop(void);
 
-
-#endif
+#endif /* FUNCTIONS_WATCHDOG_H_ */
