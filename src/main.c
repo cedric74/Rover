@@ -26,6 +26,8 @@
 #define	TICK_LOOP_MAIN_500_MS		500000
 #define	TICK_LOOP_MAIN_1_S	   		1000000
 
+#define	TICK_LOOP_MAIN_5_S	   		5000000
+
 /*******************************************
 *          F U N C T I O N S    		   *
 ********************************************/
@@ -45,11 +47,11 @@ int main(int argc, char *argv[])
 
 	// Main Loop
 	do{
-		// Main Function Detect
-		//main_Detect();
+		// Test Pwm
+		test_PWM();
 
 		// Sleep
-		usleep(TICK_LOOP_MAIN_500_MS);
+		usleep(TICK_LOOP_MAIN_5_S);
 
 	}while(1);
 
@@ -71,6 +73,8 @@ void Init(){
 
 //	// Start WatchDog
 	watch_dog_start();
+
+	Test_init();
 //
 //	// Load Config File
 //	int iRet =Lib_Config_Load();
