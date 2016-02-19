@@ -1,0 +1,20 @@
+Port-IN-OUT with Beagle Bone Black and Others Modules
+
+Left Motor :
+	* InA  -> P9_11
+	* InB  -> P9_13	
+Right Motor :
+ 	* InA  -> P9_12
+	* InB  -> P9_15
+Servo Motor Sonar :
+	* PWM  -> P9_12
+	* 3.3V -> P9_03, P9_04
+	* GND  -> P9_01, P9_02 
+Detection Captor :
+	* Input-> P9_16
+	* 3.3V -> P9_03, P9_04
+	* GND  -> P9_01, P9_02 
+Sonar :
+	* Input-> P9_28 (PRU READ), P9_27 (PRU WRITE)
+	* 5 V  -> P9_05, P9_06
+	* GND  -> P9_01, P9_02 
