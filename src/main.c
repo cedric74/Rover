@@ -47,11 +47,11 @@ int main(int argc, char *argv[])
 
 	// Main Loop
 	do{
-		// Test Sonar
-		Functional_Test_Sonar();
+		// Test_ServoMotor
+		Functional_Test_PWM();
 
 		// Sleep
-		usleep(TICK_LOOP_MAIN_1_S);
+		usleep(TICK_LOOP_MAIN_5_S);
 
 	}while(1);
 
