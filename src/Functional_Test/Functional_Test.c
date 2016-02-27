@@ -42,7 +42,7 @@
  Description  :
  ============================================
  */
-void Test_init(){
+void Functional_Test_init(){
 	Lib_Servo_init();
 
 	// Init Gpio Lib
@@ -54,13 +54,13 @@ void Test_init(){
 
 /*
  ============================================
- Function     : test_PWM()
+ Function     : Functional_Test_Sonar()
  Parameter    :
  Return Value : void
  Description  :
  ============================================
  */
-void test_Sonar(){
+void Functional_Test_Sonar(){
 	// Sonar Scanning
 	Lib_Sonar_Ping();
 }
@@ -73,7 +73,7 @@ void test_Sonar(){
  Description  :
  ============================================
  */
-void test_PWM(){
+void Functional_Test_PWM(){
 
 	servo_180();
 }
