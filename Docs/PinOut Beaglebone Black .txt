@@ -7,7 +7,7 @@ Right Motor :
  	* InA  -> P9_12
 	* InB  -> P9_15
 Servo Motor Sonar :
-	* PWM  -> P9_12
+	* PWM  -> P9_14
 	* 3.3V -> P9_03, P9_04
 	* GND  -> P9_01, P9_02 
 Detection Captor :
