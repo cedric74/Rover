@@ -44,7 +44,27 @@
  */
 void Test_init(){
 	Lib_Servo_init();
+
+	// Init Gpio Lib
+	beh_BBB_gpio_init();
+
+	// Init Sonar
+	Lib_Sonar_Init();
 }
+
+/*
+ ============================================
+ Function     : test_PWM()
+ Parameter    :
+ Return Value : void
+ Description  :
+ ============================================
+ */
+void test_Sonar(){
+	// Sonar Scanning
+	Lib_Sonar_Ping();
+}
+
 /*
  ============================================
  Function     : test_PWM()
@@ -55,12 +75,7 @@ void Test_init(){
  */
 void test_PWM(){
 
-
-
-
 	servo_180();
-
-
 }
 
 

@@ -48,7 +48,10 @@ int main(int argc, char *argv[])
 	// Main Loop
 	do{
 		// Test Pwm
-		test_PWM();
+//		test_PWM();
+
+		// Test Sonar
+		test_Sonar();
 
 		// Sleep
 		usleep(TICK_LOOP_MAIN_5_S);
@@ -71,31 +74,10 @@ void Init(){
 	// Print Version
 	printf("%s \n" , START_FILE);
 
-//	// Start WatchDog
+	// Start WatchDog
 	watch_dog_start();
 
+	//
 	Test_init();
-//
-//	// Load Config File
-//	int iRet =Lib_Config_Load();
-//	if(iRet == ERROR){
-//		printf(" Error Load Configuration File\n");
-//		exit(0);
-//	}
-//
-//	// Create File Log With Version
-//	File_Log(START_FILE, SIZE_STRING);
-//
-//	// Init Gpio Lib
-//	beh_BBB_gpio_init();
-//
-//	// Init  Detect Lib
-//	Init_Lib_Detect();
-//
-//	// Init Siren
-//	Init_Siren();
-//
-//	// Init State Machine
-//	Init_State_Machine();
 
 }
