@@ -51,10 +51,6 @@
 #define	RUNNING_PROCESS		1
 #define	STOP_PROCESS		0
 
-
-// No Sonar
-#define NO_SONAR 1
-
 /*******************************************
 *   T Y P E D E F   &  C O N S T A N T E   *
 ********************************************/
@@ -342,23 +338,23 @@ static void Lib_Algo_Scanning(eServo_Sonar_Rotate valueRotate){
 	// Maybe Need some Delay to be at the right place
 	usleep(DELAYS_250_MS);
 
-//	#ifdef 	NO_SONAR
-//		// Test Debug Without Sonar
-//		// Generate A random Value for fDistance variables
-//		fDistance = rand() % 300;
-//
-//		// Print Value
-//		printf(" fDistance : %4.2f , Random Generator \n" , fDistance);
-//
-//	#else
-//		// Sonar Scanning
-//		Lib_Sonar_Ping();
-//	#endif
+	#ifdef 	NO_SONAR
+		// Test Debug Without Sonar
+		// Generate A random Value for fDistance variables
+		fDistance = rand() % 300;
+
+		// Print Value
+		printf(" fDistance : %4.2f , Random Generator \n" , fDistance);
+
+	#else
+		// Sonar Scanning
+		Lib_Sonar_Ping();
+	#endif
 
 
 
 	// Save Value into the Table Area
-//	tabAreaScannig[valueRotate] = fDistance;
+	tabAreaScannig[valueRotate] = fDistance;
 
 }
 
@@ -419,14 +415,14 @@ void Lib_Algo_Init(){
 	Lib_Servo_init();
 
 
-//	#ifdef 	NO_SONAR
-//		// Init Randon Generator
-//		srand(time(NULL));
-//
-//	#else
-//		// Init Sonar
-//		Lib_Sonar_Init();
-//	#endif
+	#ifdef 	NO_SONAR
+		// Init Randon Generator
+		srand(time(NULL));
+
+	#else
+		// Init Sonar
+		Lib_Sonar_Init();
+	#endif
 
 	// Scanning the All Area at the Init Position
 	Lib_Algo_All_Area_Scanning();
