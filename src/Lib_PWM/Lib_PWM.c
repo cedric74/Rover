@@ -59,11 +59,10 @@ int Lib_pwm_init(ePwm pwm){
 
 	snprintf(buffer, BUFFER_SIZE, "echo ");
 	strcat(buffer, strsInitBonePwm[pwm]);
-	strcat(buffer,"> /sys/devices/bone_capemgr.9/slots");
+	strcat(buffer," > /sys/devices/bone_capemgr.9/slots");
 
 	printf("\n Test Init : %s \n", buffer);
-	//system("echo  bone_pwm_P9_14 > /sys/devices/bone_capemgr.9/slots");
-
+	system(buffer);
 
 	// Wait Time to Load The Cape Into The Slots
 	usleep(500000);
