@@ -18,7 +18,27 @@
 /*******************************************
 *   T Y P E D E F   &  C O N S T A N T E   *
 ********************************************/
+typedef enum {
+	PWM_P8_13  = 0,
+	PWM_P9_14  = 1,
+	PWM_P8_21  = 2,
+	PWM_P8_42  = 3,
+	Number_Pwm = 4,
+}ePwm;
 
+const char strsInitBonePwm[Number_Pwm][BUFFER_SIZE]={
+		BONE_P8_13,
+		BONE_P9_14,
+		BONE_P9_21,
+		BONE_P9_42,
+};
+
+const char strsPwmControl[Number_Pwm][BUFFER_SIZE]={
+		PATH_P8_13,
+		PATH_P9_14,
+		PATH_P9_21,
+		PATH_P9_42,
+};
 /*******************************************
 *	 G L O B A L   V A R I A B L E S  	   *
 ********************************************/
