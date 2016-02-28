@@ -43,7 +43,7 @@ int Lib_pwm_init(){
 	// Instructions
 
 	// Add Cape inside Slots
-	system("echo  bone_pwm_P9_14 > /sys/devices/bone_capemgr.9/slots");
+	system("echo  bone_pwm_P8_13 > /sys/devices/bone_capemgr.9/slots");
 	printf( " Added Cape Pwm Into Slots OK \n");
 
 	// Wait Time to Load The Cape Into The Slots
