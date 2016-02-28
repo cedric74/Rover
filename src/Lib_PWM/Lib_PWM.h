@@ -31,7 +31,7 @@
 ********************************************/
 #define 	BUFFER_SIZE 	128
 
-#define		PATH_P9_14			"/sys/devices/ocp.3/pwm_test_P9_14."
+#define		PATH_P9_14			"/sys/devices/ocp.3/pwm_test_P8_13."
 
 #define 	PATH_POLARITY  	"/polarity"
 #define 	PATH_PERIOD  	"/period"
