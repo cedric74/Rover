@@ -125,7 +125,7 @@ void Lib_Servo_Sonar_Control(eServo_Sonar_Rotate valueRotate) // Create a typede
 void Lib_Servo_init(){
 
 	// Set Polarity to 0
-	Lib_pwm_init();
+	Lib_pwm_init(PWM_P8_13);
 
 	// Set Run to 1
 	Lib_pwm_start();

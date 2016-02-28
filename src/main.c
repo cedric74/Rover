@@ -47,14 +47,14 @@ int main(int argc, char *argv[])
 
 	// Main Loop
 	do{
-		// Test Pwm
-//		test_PWM();
+		// Test_ServoMotor
+		Functional_Test_PWM();
 
-		// Test Sonar
-		test_Sonar();
+		// Test PWM
+		//Functional_Test_Sonar();
 
 		// Sleep
-		usleep(TICK_LOOP_MAIN_5_S);
+		usleep(TICK_LOOP_MAIN_1_S);
 
 	}while(1);
 
@@ -77,7 +77,7 @@ void Init(){
 	// Start WatchDog
 	watch_dog_start();
 
-	//
-	Test_init();
+	// Init Functional Test Lib
+	Functional_Test_init();
 
 }
