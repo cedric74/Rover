@@ -70,7 +70,7 @@ int Lib_Sonar_Ping(){
 	unsigned int ret;
 	tpruss_intc_initdata pruss_intc_initdata = PRUSS_INTC_INITDATA;
 
-	printf("\nINFO: Starting %s example.\r\n", "PRU_DRIVER_SONAR V 1.4");
+//	printf("\nINFO: Starting %s example.\r\n", "PRU_DRIVER_SONAR V 1.4");
 
 	/* Initialize the PRU */
 	prussdrv_init ();
@@ -87,7 +87,7 @@ int Lib_Sonar_Ping(){
 	prussdrv_pruintc_init(&pruss_intc_initdata);
 
 	/* Execute example on PRU */
-	printf("\tINFO: Executing example.\r\n");
+//	printf("\tINFO: Executing example.\r\n");
 
 	prussdrv_exec_program (PRU_NUM, "Lib_Sonar/./prucode.bin");
 
@@ -97,7 +97,7 @@ int Lib_Sonar_Ping(){
 	prussdrv_pru_wait_event (PRU_EVTOUT_0);
 
 	// Clear Event
-	printf("\tINFO: PRU completed transfer.\r\n");
+//	printf("\tINFO: PRU completed transfer.\r\n");
 	prussdrv_pru_clear_event (PRU_EVTOUT_0, PRU0_ARM_INTERRUPT);
 
 	// Read Time Pulse From PRU

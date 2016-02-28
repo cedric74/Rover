@@ -18,8 +18,9 @@
 /*******************************************
 *	        F U N C T I O N S   	       *
 ********************************************/
-void Test_init();
-void test_PWM();
+void Functional_Test_init();
+void Functional_Test_PWM();
+void Functional_Test_Sonar();
 void servo_180();
 
 #endif /* FUNCTIONAL_TEST_FUNCTIONAL_TEST_H_ */
