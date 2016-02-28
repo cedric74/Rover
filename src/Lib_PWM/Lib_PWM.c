@@ -23,6 +23,9 @@
 *	 G L O B A L   V A R I A B L E S  	   *
 ********************************************/
 char cPath_P9_14[BUFFER_SIZE];
+
+
+char cPath[BUFFER_SIZE];
 /*******************************************
 *	        F U N C T I O N S   	       *
 ********************************************/
@@ -43,8 +46,14 @@ int Lib_pwm_init(){
 	// Instructions
 
 	// Add Cape inside Slots
-	system("echo  bone_pwm_P9_14 > /sys/devices/bone_capemgr.9/slots");
-	printf( " Added Cape Pwm Into Slots OK \n");
+	snprintf(buffer, BUFFER_SIZE, "echo");
+	strcat(buffer, BONE_P8_13);
+	strcat(buffer,"> /sys/devices/bone_capemgr.9/slots");
+
+	printf("\n Test Init : %s \n", buffer);
+	//system("echo  bone_pwm_P9_14 > /sys/devices/bone_capemgr.9/slots");
+
+
 
 	// Wait Time to Load The Cape Into The Slots
 	usleep(500000);

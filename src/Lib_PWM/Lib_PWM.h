@@ -31,12 +31,20 @@
 ********************************************/
 #define 	BUFFER_SIZE 	128
 
-#define		PATH_P9_14			"/sys/devices/ocp.3/pwm_test_P9_14."
+#define		BONE_P8_13			"bone_pwm_P8_13"
+#define		BONE_P9_14			"bone_pwm_P9_14"
+#define		BONE_P9_21			"bone_pwm_P9_21"
+#define		BONE_P9_42			"bone_pwm_P9_42"
 
-#define 	PATH_POLARITY  	"/polarity"
-#define 	PATH_PERIOD  	"/period"
-#define 	PATH_DUTY    	"/duty"
-#define     PATH_RUN		"/run"
+#define		PATH_P8_13			"/sys/devices/ocp.3/pwm_test_P8_13."
+#define		PATH_P9_14			"/sys/devices/ocp.3/pwm_test_P9_14."
+#define		PATH_P9_21			"/sys/devices/ocp.3/pwm_test_P9_21."
+#define		PATH_P9_42			"/sys/devices/ocp.3/pwm_test_P9_42."
+
+#define 	PATH_POLARITY  		"/polarity"
+#define 	PATH_PERIOD  		"/period"
+#define 	PATH_DUTY    		"/duty"
+#define     PATH_RUN			"/run"
 
 #define		Offset_11			"11"
 #define		Offset_12			"12"
@@ -50,9 +58,6 @@
 #define		Offset_20			"20"
 #define		Offset_21			"21"
 #define		Offset_22			"22"
-
-
-
 
 #define 	NO_ERROR_PWM	 0
 #define 	ERROR_PWM_OPEN	-1
