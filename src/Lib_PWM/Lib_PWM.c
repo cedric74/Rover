@@ -22,22 +22,20 @@
 /*******************************************
 *	 G L O B A L   V A R I A B L E S  	   *
 ********************************************/
-char cPath_P9_14[BUFFER_SIZE];
-
-
 char cPath[BUFFER_SIZE];
+
 /*******************************************
 *	        F U N C T I O N S   	       *
 ********************************************/
 /*
  ============================================
  Function     : Lib_pwm_init()
- Parameter    :
+ Parameter    : ePwm
  Return Value : int
  Description  :
  ============================================
  */
-int Lib_pwm_init(){
+int Lib_pwm_init(ePwm pwm){
 	// Declaration Variables
 	int fd;
 	char buffer[BUFFER_SIZE];
@@ -46,13 +44,13 @@ int Lib_pwm_init(){
 	// Instructions
 
 	// Add Cape inside Slots
-	snprintf(buffer, BUFFER_SIZE, "echo");
-	strcat(buffer, BONE_P8_13);
+
+	snprintf(buffer, BUFFER_SIZE, "echo ");
+	strcat(buffer, strsInitBonePwm[pwm]);
 	strcat(buffer,"> /sys/devices/bone_capemgr.9/slots");
 
 	printf("\n Test Init : %s \n", buffer);
 	//system("echo  bone_pwm_P9_14 > /sys/devices/bone_capemgr.9/slots");
-
 
 
 	// Wait Time to Load The Cape Into The Slots
@@ -60,15 +58,15 @@ int Lib_pwm_init(){
 
 	// Find Value Offset
 	do{
-		snprintf(cPath_P9_14, BUFFER_SIZE, PATH_P9_14);
+		snprintf(cPath, BUFFER_SIZE, strsPwmControl[pwm]);
 
 		// Convert Integer to String
 		char str[2];
 		sprintf(str, "%d", iOffset);
-		strcat(cPath_P9_14,str);
+		strcat(cPath,str);
 
 		// Copy  Path
-		snprintf(buffer , BUFFER_SIZE, cPath_P9_14);
+		snprintf(buffer , BUFFER_SIZE, cPath);
 		strcat(buffer,PATH_RUN);
 
 		iOffset++;
@@ -97,7 +95,7 @@ int Lib_pwm_init(){
 	close (fd);
 
 	// Polarity -> 0
-	snprintf(buffer, BUFFER_SIZE, cPath_P9_14);
+	snprintf(buffer, BUFFER_SIZE, cPath);
 	strcat(buffer,PATH_POLARITY);
 	fd = open(buffer, O_WRONLY);
 	if (fd < 0) {
@@ -130,7 +128,7 @@ int Lib_pwm_start(){
 
 	// Instructions
 	// ----- Echo 1 > RUN
-	snprintf(buffer, BUFFER_SIZE, cPath_P9_14);
+	snprintf(buffer, BUFFER_SIZE, cPath);
 	strcat(buffer,PATH_RUN);
 
 	fd = open(buffer, O_WRONLY);
@@ -165,7 +163,7 @@ int Lib_pwm_control(int iPeriod, int iDuty )
 
 	// Instructions
 	// ----- Echo value > PERIOD
-	snprintf(buffer, BUFFER_SIZE, cPath_P9_14);
+	snprintf(buffer, BUFFER_SIZE, cPath);
 	strcat(buffer,PATH_PERIOD);
 	fd = open(buffer, O_WRONLY);
 	if (fd < 0) {
@@ -181,7 +179,7 @@ int Lib_pwm_control(int iPeriod, int iDuty )
 	close (fd);
 
 	// ----- Echo value > DUTY
-	snprintf(buffer, BUFFER_SIZE, cPath_P9_14);
+	snprintf(buffer, BUFFER_SIZE, cPath);
 	strcat(buffer,PATH_DUTY);
 
 	fd = open(buffer, O_WRONLY);
@@ -216,7 +214,7 @@ int Lib_pwm_stop(){
 
 	// Instructions
 	// ----- Echo 0 > RUN
-	snprintf(buffer, BUFFER_SIZE, cPath_P9_14);
+	snprintf(buffer, BUFFER_SIZE, cPath);
 	strcat(buffer,PATH_RUN);
 
 	fd = open(buffer, O_WRONLY);
