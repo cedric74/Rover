@@ -50,8 +50,11 @@ int main(int argc, char *argv[])
 		// Test_ServoMotor
 		Functional_Test_PWM();
 
+		// Test PWM
+		//Functional_Test_Sonar();
+
 		// Sleep
-		usleep(TICK_LOOP_MAIN_5_S);
+		usleep(TICK_LOOP_MAIN_1_S);
 
 	}while(1);
 
