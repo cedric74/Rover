@@ -18,14 +18,6 @@
 /*******************************************
 *   T Y P E D E F   &  C O N S T A N T E   *
 ********************************************/
-typedef enum {
-	PWM_P8_13  = 0,
-	PWM_P9_14  = 1,
-	PWM_P8_21  = 2,
-	PWM_P8_42  = 3,
-	Number_Pwm = 4,
-}ePwm;
-
 const char strsInitBonePwm[Number_Pwm][BUFFER_SIZE]={
 		BONE_P8_13,
 		BONE_P9_14,
