@@ -69,8 +69,8 @@
 typedef enum {
 	PWM_P8_13  = 0,
 	PWM_P9_14  = 1,
-	PWM_P8_21  = 2,
-	PWM_P8_42  = 3,
+	PWM_P9_21  = 2,
+	PWM_P9_42  = 3,
 	Number_Pwm = 4,
 }ePwm;
 
