@@ -26,6 +26,8 @@
 #define	TICK_LOOP_MAIN_500_MS		500000
 #define	TICK_LOOP_MAIN_1_S	   		1000000
 
+#define	TICK_LOOP_MAIN_5_S	   		5000000
+
 /*******************************************
 *          F U N C T I O N S    		   *
 ********************************************/
@@ -45,11 +47,14 @@ int main(int argc, char *argv[])
 
 	// Main Loop
 	do{
-		// Main Function Detect
-		//main_Detect();
+		// Test_ServoMotor
+		Functional_Test_PWM();
+
+		// Test PWM
+		//Functional_Test_Sonar();
 
 		// Sleep
-		usleep(TICK_LOOP_MAIN_500_MS);
+		usleep(TICK_LOOP_MAIN_1_S);
 
 	}while(1);
 
@@ -69,29 +74,10 @@ void Init(){
 	// Print Version
 	printf("%s \n" , START_FILE);
 
-//	// Start WatchDog
+	// Start WatchDog
 	watch_dog_start();
-//
-//	// Load Config File
-//	int iRet =Lib_Config_Load();
-//	if(iRet == ERROR){
-//		printf(" Error Load Configuration File\n");
-//		exit(0);
-//	}
-//
-//	// Create File Log With Version
-//	File_Log(START_FILE, SIZE_STRING);
-//
-//	// Init Gpio Lib
-//	beh_BBB_gpio_init();
-//
-//	// Init  Detect Lib
-//	Init_Lib_Detect();
-//
-//	// Init Siren
-//	Init_Siren();
-//
-//	// Init State Machine
-//	Init_State_Machine();
+
+	// Init Functional Test Lib
+	Functional_Test_init();
 
 }
